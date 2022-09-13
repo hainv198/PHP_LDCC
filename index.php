@@ -1,5 +1,27 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="index.php" method="post">
+    <input type="text" name="data">
+    <input type="submit">
+</form>
+</body>
+</html>
 <?php
+    echo "Method _POST";
+    echo $_POST['data'];
+    echo"</br>";
+    echo "Method _GET";
+    echo $_POST['data'];
+    echo"</br>";
+
     // khai bao bien
     $numberOne = 123;
     $numberTwo = 234;
@@ -70,7 +92,6 @@ echo "</br>";
             }
         }
     }
-isPrimeNumber($n);
     echo ("cac so ngto nho hon 100 la : </br>");
     for($i = 0; $i < 100; $i ++) {
         echo($i . " ");
@@ -105,7 +126,56 @@ echo "</br>";
     }
     myApp(10, 11);
 echo "</br>";
-//
+// lam việc với array
+    $data = array('hainv', 'ngansky', 'arungstr');
+    $key = array('C', 'B', 'A');
+    $keyNum = array(2, 4, 1);
+    echo ($data[0]);
+    for ($i = 0; $i < count($data); $i++) {
+        echo $data[$i];
+    }
+    //hàm sort sắp xếp theo thứ tự chữ cái, số thứ tự tăng dần
+
+    // ngược lại hàm rsort sắp xếp theo thứ tự giảm dần
+
+    sort($data);
+    echo print_r($data);
+    sort($key);
+    echo print_r($key);
+    echo "</br>";
+    sort($keyNum);
+    echo print_r($keyNum);
+
+
+    // chuyen doi chuoi thanh mang
+    echo "<hr>";
+    echo "</br>";
+    $a = "16/11/1998";
+    $newA =  explode("/", $a);
+    print_r($newA);
+
+
+    // chuyen array qua string
+    echo "<hr>";
+    echo "</br>";
+
+    $b = array('1','4','5','10');
+    $string = implode(" ", $b);
+    print_r($string);
+    echo "<hr>";
+    echo "</br>";
+    // Biến toàn cầu
+    $num1 = 10;
+    $num2 = 20;
+    function sum_number () {
+        $GLOBALS['sum'] = $GLOBALS['num1'] + $GLOBALS['num2'];
+    }
+    sum_number();
+    echo $sum;
+echo "<hr>";
+echo "</br>";
+// Methods Post width form html tren dau
+    echo $_POST['data'];
 
 ?>
 
